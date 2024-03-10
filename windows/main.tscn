@@ -1,0 +1,107 @@
+[gd_scene load_steps=22 format=3 uid="uid://yyoirxre7f4t"]
+
+[ext_resource type="PackedScene" uid="uid://doqkk5eur4lin" path="res://env/env_nature.tscn" id="1_6t5y1"]
+[ext_resource type="PackedScene" uid="uid://cmeatv63jqu6o" path="res://objects/table.tscn" id="2_3dnii"]
+[ext_resource type="PackedScene" uid="uid://cgupcsdkbkpfq" path="res://objects/room/room.tscn" id="2_g36ed"]
+[ext_resource type="PackedScene" uid="uid://dwvg8bsdqolv1" path="res://objects/PC/motherboard/motherboard.tscn" id="3_bky3r"]
+[ext_resource type="PackedScene" uid="uid://4kjfmue5or78" path="res://objects/chair/chair.tscn" id="3_vv1xn"]
+[ext_resource type="PackedScene" uid="uid://uhtnh5rxgr6c" path="res://objects/PC/cpuOld/cpuOld.tscn" id="4_14jud"]
+[ext_resource type="PackedScene" uid="uid://bbd0ew5oqahdb" path="res://objects/lamp/lamp.tscn" id="5_cxpfl"]
+[ext_resource type="PackedScene" uid="uid://c1grsa4s0mff" path="res://objects/PC/cpuNew/cpuNew.tscn" id="5_gkmm4"]
+[ext_resource type="PackedScene" uid="uid://dlg37pmhk0vs3" path="res://objects/roof_lamp/roof_lamp.tscn" id="6_m4bme"]
+[ext_resource type="PackedScene" uid="uid://um7gsabagq5" path="res://objects/PC/cooler/cooler.tscn" id="6_vi8sl"]
+[ext_resource type="PackedScene" uid="uid://k1a0iym586a2" path="res://objects/keyboard/keyboard.tscn" id="7_xkj4y"]
+[ext_resource type="PackedScene" uid="uid://cx0irv8vejrug" path="res://objects/door/door.tscn" id="8_hqrdw"]
+[ext_resource type="PackedScene" uid="uid://cbn7gi8dm2clq" path="res://objects/cabinet/cabinet.tscn" id="9_f0k7f"]
+[ext_resource type="PackedScene" uid="uid://bctfcms0ukjpk" path="res://objects/monitor/monitor.tscn" id="10_n0qpq"]
+[ext_resource type="PackedScene" uid="uid://bxfal5fxqildp" path="res://objects/mouse/mouse.tscn" id="11_b4uil"]
+[ext_resource type="PackedScene" uid="uid://rb7wff3svk58" path="res://objects/boombox/boombox.tscn" id="12_n1x27"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://objects/player/player.tscn" id="13_0s14e"]
+[ext_resource type="PackedScene" uid="uid://cm2upybi1bv0e" path="res://objects/plug/plug.tscn" id="14_3mlyn"]
+[ext_resource type="PackedScene" uid="uid://d08e0xt7ufa4s" path="res://objects/multimesh/bed.tscn" id="15_yi3ts"]
+[ext_resource type="PackedScene" uid="uid://cd8vre8b4g36y" path="res://objects/PC/case/case.tscn" id="16_28xjx"]
+
+[sub_resource type="Environment" id="Environment_b5cd8"]
+ambient_light_energy = 10.09
+glow_enabled = true
+
+[node name="main" type="Node"]
+
+[node name="ENV" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ENV"]
+environment = SubResource("Environment_b5cd8")
+
+[node name="env_nature" parent="ENV" instance=ExtResource("1_6t5y1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ENV"]
+transform = Transform3D(0.857419, 0.219204, -0.465599, 1.23418e-08, 0.904745, 0.425953, 0.514619, -0.36522, 0.775746, 0, 10.7305, 0)
+shadow_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="PC" type="Node3D" parent="."]
+
+[node name="case" parent="PC" instance=ExtResource("16_28xjx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.32877, 0.972697, 0.617348)
+
+[node name="motherboard" parent="PC" instance=ExtResource("3_bky3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41231, 0, 1.27179)
+
+[node name="cpuOld" parent="PC" instance=ExtResource("4_14jud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72201, 0, 1.46226)
+
+[node name="cpuNew" parent="PC" instance=ExtResource("5_gkmm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72713, 0, 1.6297)
+
+[node name="cooler" parent="PC" instance=ExtResource("6_vi8sl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66197, 0, 1.12454)
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="room" parent="world" instance=ExtResource("2_g36ed")]
+
+[node name="table" parent="world" instance=ExtResource("2_3dnii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35856, 0.333081, 0)
+
+[node name="chair" parent="world" instance=ExtResource("3_vv1xn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.62911, -0.0424693, 0)
+
+[node name="lamp" parent="world" instance=ExtResource("5_cxpfl")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.57408, 0.671199, -0.588412)
+
+[node name="roof_lamp" parent="world" instance=ExtResource("6_m4bme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03979, 0)
+
+[node name="keyboard" parent="world" instance=ExtResource("7_xkj4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11183, 0.708725, 0)
+
+[node name="door" parent="world" instance=ExtResource("8_hqrdw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 1.23746, -4.97994)
+
+[node name="cabinet" parent="world" instance=ExtResource("9_f0k7f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.9636, -0.0059005, -4.45868)
+
+[node name="monitor" parent="world" instance=ExtResource("10_n0qpq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.57259, 0.676498, 0)
+
+[node name="mouse" parent="world" instance=ExtResource("11_b4uil")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.13732, 0.682486, 0.369128)
+
+[node name="boombox" parent="world" instance=ExtResource("12_n1x27")]
+transform = Transform3D(-0.609675, 0, -0.792652, 0, 1, 0, 0.792652, 0, -0.609675, 4.51707, 0.0189291, 4.55341)
+
+[node name="Player" parent="world" instance=ExtResource("13_0s14e")]
+
+[node name="plug" parent="world" instance=ExtResource("14_3mlyn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.99331, 0.835718, 0.452379)
+
+[node name="plug2" parent="world" instance=ExtResource("14_3mlyn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.99331, 0.835718, 0.551552)
+
+[node name="plug3" parent="world" instance=ExtResource("14_3mlyn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.99331, 0.835718, 0.646889)
+
+[node name="bed" parent="world" instance=ExtResource("15_yi3ts")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.78773, -1.19209e-07, 3.52111)
