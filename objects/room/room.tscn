@@ -51,9 +51,17 @@ size = Vector3(14, 4, 0.5)
 transform = Transform3D(1, -1.74846e-07, 7.64274e-15, 0, -4.37114e-08, -1, 1.74846e-07, 1, -4.37114e-08, 0, 2.5, -6)
 shape = SubResource("ConvexPolygonShape3D_wigq0")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+[node name="wall_2_collider_particles" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -6)
+size = Vector3(10, 2, 10)
+
+[node name="collider_window" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, -1.74846e-07, 7.64274e-15, 0, -4.37114e-08, -1, 1.74846e-07, 1, -4.37114e-08, 0, 2.5, 6)
 shape = SubResource("ConvexPolygonShape3D_wigq0")
+
+[node name="wall_1_collider_particles2" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(-2.18557e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -2.18557e-07, 9.55343e-15, 6, 2.5, 0)
+size = Vector3(10, 2, 10)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(-2.18557e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -2.18557e-07, 9.55343e-15, 6, 2.5, 0)
@@ -63,9 +71,17 @@ shape = SubResource("ConvexPolygonShape3D_wigq0")
 transform = Transform3D(-2.18557e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -2.18557e-07, 9.55343e-15, -6, 2.5, 0)
 shape = SubResource("ConvexPolygonShape3D_wigq0")
 
+[node name="wall_1_collider_particles" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(-2.18557e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -2.18557e-07, 9.55343e-15, -6, 2.5, 0)
+size = Vector3(10, 2, 10)
+
 [node name="floor" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.982941, 0)
 shape = SubResource("BoxShape3D_e1kw7")
+
+[node name="floor_collider_particles" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.982941, 0)
+size = Vector3(10, 2.03, 10)
 
 [node name="roof" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)

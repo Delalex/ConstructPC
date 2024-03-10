@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://yyoirxre7f4t"]
+[gd_scene load_steps=23 format=3 uid="uid://yyoirxre7f4t"]
 
 [ext_resource type="PackedScene" uid="uid://doqkk5eur4lin" path="res://env/env_nature.tscn" id="1_6t5y1"]
 [ext_resource type="PackedScene" uid="uid://cmeatv63jqu6o" path="res://objects/table.tscn" id="2_3dnii"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c1grsa4s0mff" path="res://objects/PC/cpuNew/cpuNew.tscn" id="5_gkmm4"]
 [ext_resource type="PackedScene" uid="uid://dlg37pmhk0vs3" path="res://objects/roof_lamp/roof_lamp.tscn" id="6_m4bme"]
 [ext_resource type="PackedScene" uid="uid://um7gsabagq5" path="res://objects/PC/cooler/cooler.tscn" id="6_vi8sl"]
+[ext_resource type="PackedScene" uid="uid://3d1x7p51x7t1" path="res://objects/PC/pasta/pasta.tscn" id="7_bkins"]
 [ext_resource type="PackedScene" uid="uid://k1a0iym586a2" path="res://objects/keyboard/keyboard.tscn" id="7_xkj4y"]
 [ext_resource type="PackedScene" uid="uid://cx0irv8vejrug" path="res://objects/door/door.tscn" id="8_hqrdw"]
 [ext_resource type="PackedScene" uid="uid://cbn7gi8dm2clq" path="res://objects/cabinet/cabinet.tscn" id="9_f0k7f"]
@@ -57,6 +58,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72713, 0, 1.6297)
 
 [node name="cooler" parent="PC" instance=ExtResource("6_vi8sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66197, 0, 1.12454)
+
+[node name="pasta" parent="PC" instance=ExtResource("7_bkins")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95956, 0.108098, 1.701)
+
+[node name="pasta2" parent="PC" instance=ExtResource("7_bkins")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95956, 0.108098, 1.80554)
+
+[node name="pasta3" parent="PC" instance=ExtResource("7_bkins")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95956, 0.108098, 1.90705)
 
 [node name="world" type="Node3D" parent="."]
 

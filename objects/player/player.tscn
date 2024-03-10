@@ -303,7 +303,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999391, 0.0348995, 0, -0.0348995, 0.999391
 libraries = {
 "": SubResource("AnimationLibrary_o0unb")
 }
-blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"headbob", 0.5, &"headbob", &"RESET", 0.5]
+blend_times = [&"headbob", &"RESET", 0.5, &"RESET", &"headbob", 0.5, &"RESET", &"RESET", 0.5]
 
 [node name="JumpAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
@@ -347,5 +347,20 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.90625
+anchor_top = 0.921296
+anchor_right = 0.994792
+anchor_bottom = 0.990741
+grow_horizontal = 0
+grow_vertical = 0
+text = "FREEZE OBJECT - Key F
+GRAB OBJECT - Key E
+PIN OBJECT - Key X"
+horizontal_alignment = 2
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="UI/UserInterface/Reticle_1"]

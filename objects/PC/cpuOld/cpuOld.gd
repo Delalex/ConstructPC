@@ -1,9 +1,14 @@
 extends RigidBody3D
 
+var isCoveredWithThermopasta: bool = false
 @onready var collider = $collider
 
 var isGrabbed: bool = false
 var rotation_y: float = 0
+
+func coverWithThermopasta():
+	isCoveredWithThermopasta = true
+	$thermopasta.visible = true
 
 func freeze_toggle():
 	isGrabbed = false
