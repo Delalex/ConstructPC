@@ -38,8 +38,11 @@ func pin_unpin():
 		WorldSignals.emit_signal('notify', 'Куллер вытащен')
 	else:
 		if not Motherboard.place_cpu_obj == null:
-			pin_to_motherboard()
-			WorldSignals.emit_signal('notify', 'Куллер вставлен')
+			if not Motherboard.place_cpu_obj.isCoveredWithThermopasta:
+				WorldSignals.emit_signal('notify', 'Сначала намажьте термопасту на процессор')
+			else:
+				pin_to_motherboard()
+				WorldSignals.emit_signal('notify', 'Куллер вставлен')
 		else:
 			WorldSignals.emit_signal('notify', 'Сначала вставьте процессор')
 			
