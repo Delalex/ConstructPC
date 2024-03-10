@@ -30,11 +30,13 @@ func pin_unpin():
 			isBlowing = false
 			gel.emitting = false
 			gel_area.monitoring = false
+			gel_area.monitorable = false
 		false:
 			if capacity_of_gel > 0.05:
 				isBlowing = true
 				gel.emitting = true
 				gel_area.monitoring = true
+				gel_area.monitorable = true
 
 func _physics_process(delta):
 	if isGrabbed:

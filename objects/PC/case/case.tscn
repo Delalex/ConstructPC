@@ -71,10 +71,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hphpa")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtfhq"]
-size = Vector3(0.021, 0.502, 0.2)
+size = Vector3(0.021, 0.592, 0.277148)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8dh6w"]
-size = Vector3(0.021, 0.5, 0.5)
+size = Vector3(0.021, 0.615, 0.596)
 
 [node name="case" type="RigidBody3D"]
 can_sleep = false
@@ -82,25 +82,29 @@ continuous_cd = true
 script = ExtResource("1_80omr")
 
 [node name="housing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.4, 0, 0, 0)
 mesh = SubResource("ArrayMesh_sulxj")
 skeleton = NodePath("")
 
 [node name="wall_1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242188, 0.00162506, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295664, 0.00162506, 0)
 shape = SubResource("BoxShape3D_wtfhq")
 
 [node name="wall_2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.242, 0.002, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296, 0.002, -0.00107421)
 shape = SubResource("BoxShape3D_wtfhq")
 
 [node name="wall_3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.242, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.296, 0)
 shape = SubResource("BoxShape3D_wtfhq")
 
 [node name="wall_4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.242, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.296, 0)
 shape = SubResource("BoxShape3D_wtfhq")
 
 [node name="wall_5" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, 0, -0.0880073)
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, -0.000610352, -0.151471)
 shape = SubResource("BoxShape3D_8dh6w")
+
+[node name="place_motherboard" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -0.0243868, 0.00975469, -0.123087)

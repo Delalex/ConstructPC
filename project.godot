@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Player="*res://singleton/PLAYER.gd"
 Motherboard="*res://singleton/MOTHERBOARD.gd"
+Case="*res://singleton/CASE.gd"
 
 [display]
 

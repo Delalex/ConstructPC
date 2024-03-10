@@ -10,3 +10,6 @@ res://objects/PC/cpuNew/cpuNew.tscn
 res://objects/PC/cooler/cooler.tscn
 res://objects/PC/cpuNew/cpuNew.gd
 res://objects/PC/cpuOld/cpuOld.gd
+res://singleton/CASE.gd
+res://objects/PC/case/case.gd
+res://objects/PC/motherboard/motherboard.gd

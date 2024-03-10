@@ -20,6 +20,8 @@ func rotate_right():
 		rotation_y += 10
 
 func _physics_process(delta):
+	Case.place_motherboard = $place_motherboard.global_position
+	Case.place_motherboard_rot = $place_motherboard.global_rotation
 	if isGrabbed:
 		global_rotation.y = lerp(global_rotation.y, deg_to_rad(rotation_y), 0.1)
 		global_position = lerp(global_position, Player.grab_point, 0.1)

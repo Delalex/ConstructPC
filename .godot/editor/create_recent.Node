@@ -1,3 +1,4 @@
+Marker3D
 MeshInstance3D
 ShapeCast3D
 CollisionShape3D
@@ -7,9 +8,7 @@ RayCast3D
 GPUParticles3D
 Label
 RigidBody3D
-Marker3D
 Node3D
 MultiMeshInstance3D
 StaticBody3D
 SpotLight3D
-OmniLight3D
