@@ -8,6 +8,7 @@ var rotation_y: float = 0
 func freeze_toggle():
 	isGrabbed = false
 	freeze = true
+	WorldSignals.emit_signal('notify', 'Куллер заморожен')
 
 func grab():
 	isGrabbed = not isGrabbed
@@ -34,8 +35,10 @@ func _physics_process(delta):
 func pin_unpin():
 	if Motherboard.place_cooler_obj == self:
 		unpin_from_motherboard()
+		WorldSignals.emit_signal('notify', 'Куллер вытащен')
 	else:
 		pin_to_motherboard()
+		WorldSignals.emit_signal('notify', 'Куллер вставлен')
 
 
 func pin_to_motherboard():

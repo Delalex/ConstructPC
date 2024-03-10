@@ -13,3 +13,8 @@ res://objects/PC/cpuOld/cpuOld.gd
 res://singleton/CASE.gd
 res://objects/PC/case/case.gd
 res://objects/PC/motherboard/motherboard.gd
+res://objects/notification/notification.tscn
+res://objects/notification/notification.gd
+res://objects/player/player.gd
+res://singleton/WorldSignals.gd
+res://objects/PC/cooler/cooler.gd

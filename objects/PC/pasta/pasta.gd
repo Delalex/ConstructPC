@@ -11,6 +11,7 @@ var capacity_of_gel: float = 50.0
 func freeze_toggle():
 	isGrabbed = false
 	freeze = true
+	WorldSignals.emit_signal('notify', 'Тюбик термопасты заморожен')
 
 func grab():
 	isGrabbed = not isGrabbed
@@ -31,12 +32,14 @@ func pin_unpin():
 			gel.emitting = false
 			gel_area.monitoring = false
 			gel_area.monitorable = false
+			WorldSignals.emit_signal('notify', 'Тюбик термопасты закрыт')
 		false:
 			if capacity_of_gel > 0.05:
 				isBlowing = true
 				gel.emitting = true
 				gel_area.monitoring = true
 				gel_area.monitorable = true
+				WorldSignals.emit_signal('notify', 'Тюбик термопасты открыт')
 
 func _physics_process(delta):
 	if isGrabbed:

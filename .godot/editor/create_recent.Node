@@ -1,3 +1,10 @@
+Timer
+AnimationPlayer
+MarginContainer
+Label
+PanelContainer
+VBoxContainer
+CanvasLayer
 Marker3D
 MeshInstance3D
 ShapeCast3D
@@ -5,10 +12,3 @@ CollisionShape3D
 Area3D
 GPUParticlesCollisionBox3D
 RayCast3D
-GPUParticles3D
-Label
-RigidBody3D
-Node3D
-MultiMeshInstance3D
-StaticBody3D
-SpotLight3D

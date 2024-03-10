@@ -6,6 +6,7 @@ var rotation_y: float = 0
 func freeze_toggle():
 	isGrabbed = false
 	freeze = true
+	WorldSignals.emit_signal('notify', 'Корпус заморожен')
 
 func grab():
 	isGrabbed = not isGrabbed

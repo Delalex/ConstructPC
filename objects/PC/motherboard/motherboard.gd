@@ -9,6 +9,7 @@ var rotation_y: float = 0
 func freeze_toggle():
 	isGrabbed = false
 	freeze = true
+	WorldSignals.emit_signal('notify', 'Мат. плата заморожена')
 
 func grab():
 	isGrabbed = not isGrabbed
@@ -40,8 +41,10 @@ func _physics_process(delta):
 func pin_unpin():
 	if Case.place_motherboard_obj == self:
 		unpin_from_case()
+		WorldSignals.emit_signal('notify', 'Мат. плата откреплена')
 	else:
 		pin_to_case()
+		WorldSignals.emit_signal('notify', 'Мат. плата прикреплена')
 
 
 func pin_to_case():

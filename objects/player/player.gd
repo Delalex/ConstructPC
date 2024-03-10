@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
-@onready var raycast_hand = $Head/Camera/raycast_hand
+var zoom_level: float = 0.0
 
+@onready var raycast_hand = $Head/Camera/raycast_hand
+@export var notification_scene: PackedScene
 
 @export_category("Character")
 @export var base_speed : float = 3.0
@@ -66,6 +68,7 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") 
 
 
 func _ready():
+	WorldSignals.notify.connect(_notificate)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Set the camera rotation to whatever initial_facing_direction is
 	if initial_facing_direction:
@@ -77,6 +80,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	$Head/Camera/hand.position.z = lerp($Head/Camera/hand.position.z, -1.5 + zoom_level, 0.1)
 #region СТАМИНА
 	if stamina < 100 and state == 'normal':
 		stamina += 0.1
@@ -297,3 +301,14 @@ func _unhandled_input(event):
 			if raycast_hand.get_collider() is RigidBody3D:
 				if raycast_hand.get_collider().has_method('freeze_toggle'):
 					raycast_hand.get_collider().freeze_toggle()
+	if event.is_action('wheel_down'):
+		if zoom_level > -1.0:
+			zoom_level -= 0.1
+	if event.is_action('wheel_up'):
+		if zoom_level < 0.6:
+			zoom_level += 0.1
+	
+func _notificate(text: String):
+	var notif = notification_scene.instantiate()
+	$NOTIFICATIONS/list.add_child(notif)
+	notif.set_content(text)

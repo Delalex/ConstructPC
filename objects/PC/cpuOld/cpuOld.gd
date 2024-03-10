@@ -7,12 +7,15 @@ var isGrabbed: bool = false
 var rotation_y: float = 0
 
 func coverWithThermopasta():
-	isCoveredWithThermopasta = true
-	$thermopasta.visible = true
+	if not isCoveredWithThermopasta:
+		isCoveredWithThermopasta = true
+		$thermopasta.visible = true
+		WorldSignals.emit_signal('notify', 'Старый процессор покрыт термопастой')
 
 func freeze_toggle():
 	isGrabbed = false
 	freeze = true
+	WorldSignals.emit_signal('notify', 'Старый процессор заморожен')
 
 func grab():
 	isGrabbed = not isGrabbed
@@ -48,6 +51,7 @@ func pin_to_motherboard():
 	if Motherboard.place_cpu_obj == null:
 		Motherboard.place_cpu_obj = self
 		freeze = true
+		WorldSignals.emit_signal('notify', 'Старый процессор вставлен')
 		
 
 func unpin_from_motherboard():
@@ -55,3 +59,4 @@ func unpin_from_motherboard():
 	if Motherboard.place_cpu_obj == self:
 		Motherboard.place_cpu_obj = null
 		freeze = false
+		WorldSignals.emit_signal('notify', 'Старый процессор вытащен')
