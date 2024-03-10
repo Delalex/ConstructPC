@@ -37,8 +37,12 @@ func pin_unpin():
 		unpin_from_motherboard()
 		WorldSignals.emit_signal('notify', 'Куллер вытащен')
 	else:
-		pin_to_motherboard()
-		WorldSignals.emit_signal('notify', 'Куллер вставлен')
+		if not Motherboard.place_cpu_obj == null:
+			pin_to_motherboard()
+			WorldSignals.emit_signal('notify', 'Куллер вставлен')
+		else:
+			WorldSignals.emit_signal('notify', 'Сначала вставьте процессор')
+			
 
 
 func pin_to_motherboard():

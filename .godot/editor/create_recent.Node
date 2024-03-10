@@ -1,3 +1,4 @@
+GPUParticlesCollisionBox3D
 Timer
 AnimationPlayer
 MarginContainer
@@ -10,5 +11,4 @@ MeshInstance3D
 ShapeCast3D
 CollisionShape3D
 Area3D
-GPUParticlesCollisionBox3D
 RayCast3D
